@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+
+    <swiper-item wx:for="{{imgUrls}}">
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+ 
+  </swiper>
+
+  <view class="info">
+    <view wx:for="{{info}}" class="info-list">
+
+      <image src="{{item.thumbnail_pic_s}}" class="info-image"></image>
+
+      <view class="info-right">
+
+        <text class="info-title">{{item.title}}</text>
+        
+        <view class="info-extra">
+          <text class="info-author">{{item.author_name}}</text>
+          <text class="info-date">{{item.date}}</text>
+        </view>
+        
+      </view>
+
+    </view>
+  </view>
+
+
+
+
+
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+  
+</view>
